@@ -1,0 +1,26 @@
+1. Create the Header component
+  - will consist of just an h2 imported inside App.js  
+
+2. Balance Component
+  - Create a seperate div, under the Header but inside the entire div... 
+    - assigned container as className
+  - Pass the Balance component inside div. 
+  - Create the Balance Component and import inside App.js
+  ** I DID NOT ADD IT AS A FUNCTIONAL COMPONENT TO SEE WHAT WILL HAPPEN **
+
+3. The income-expense component
+
+4. The Transaction
+  - Will consist of two components: A TransactionList Component and an individual Transaction Component
+  - to begin, start by creating the transaction list... (TransactionList.js)
+
+5. Add New Transaction component
+  - create a new component "AddTransaction"
+
+THE GLOBAL STATE:
+1. Create a new folder, 'context'
+2. inside this folder, create a file called "GlobalState.js". (will hold the context)
+  A)  import React { createContext, useReducer } from 'react';
+  B)  inialize our state, the global state; the global state will be an object and any data that needs to be shared throughout the app will need to be inside here.
+      - In this case, we will only need to transactions 
+          -- we will later call ACTIONS such as Add transaction, Delete transaction, etc. 
