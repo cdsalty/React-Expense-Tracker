@@ -24,3 +24,40 @@ THE GLOBAL STATE:
   B)  inialize our state, the global state; the global state will be an object and any data that needs to be shared throughout the app will need to be inside here.
       - In this case, we will only need to transactions 
           -- we will later call ACTIONS such as Add transaction, Delete transaction, etc. 
+
+      const initialState = {
+        transactions: [
+          { id: 1, text: 'Flower', amount: -20 },
+          { id: 2, text: 'Salary', amount: 300 },
+          { id: 3, text: 'Book', amount: -10 },
+          { id: 4, text: 'Camera', amount: 150 }
+          ]
+        }
+
+3. Create the global context that was imported (to share the context)
+  - export const GlobalContext = createContext(initialState);
+
+4. Create a PROVIDER Component
+  - in order for the other components to have access to it, we need to have a provider. 
+    - need to wrap the components in a PROVIDER
+    - inside the provider, we will call on USEREDUCER because we need to call a reducer action and it will use this dispatch
+    - Reducer will take the file where useReducer will be used in as well as the initial state
+    - It will return a GlobalContext.Provider that will hold the children
+      - {children} will consist of all the components wrapped around the provider
+      - we also pass the provider a 'value' prop  and we assign it the transactions and where to locate them.
+
+      export const GlobalProivder = ({ children }) => {
+        const [state, dispatch] = useReducer(AppReducer, initialState);
+        return(
+          <GlobalContext.Provider value = {{transactions: state.transactions}}>
+            {children}
+          </GlobalContext.Provider>
+        );
+      }
+
+5. Create the AppReducer that we referenced in the previos step. 
+  - go ahead and import AppReducer in the GloablState component and then create the actual component. It's going 
+    to have to have it imported anyway since I reference it inside the useReducer hook in previous step.
+
+  - Create AppReducer
+    - takes a switch that takes on a type which is like an id...
