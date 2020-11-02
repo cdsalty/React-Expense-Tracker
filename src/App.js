@@ -3,12 +3,13 @@ import Balance from './components/Balance';
 import IncomeExpenses from './components/IncomeExpenses';
 import TransactionList from './components/TransactionList';
 import AddTransaction from './components/AddTransaction';
+import { GlobalProivder } from './context/GlobalState';
 
 import './App.css';
 
 const App = () => {
   return (
-    <div>
+    <GlobalProivder>
       <Header />
       <div className="container">
         <Balance />
@@ -16,7 +17,7 @@ const App = () => {
         <TransactionList />
         <AddTransaction />
       </div>
-    </div>
+    </GlobalProivder>
   );
 }
 

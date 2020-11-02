@@ -61,3 +61,38 @@ THE GLOBAL STATE:
 
   - Create AppReducer
     - takes a switch that takes on a type which is like an id...
+    The basic layout: 
+  
+    export default (state, dispatch) => {
+      switch (action.type) {
+        default:
+        return state;
+      }
+    }
+
+
+6. Inside App.js, I need to import the GlobalProvider
+  - import { GlobalProvider } from '/components/AddTransaction'
+  - wrap the Provider around the components
+
+7. Pass the context via useContext
+  - inside TransactionList, import GlobalContext and useContext
+    - pass the context (const context = useContext(GlobalContext))
+      - const context = useContext(GlobalContext);
+      - console.log(context);
+
+        const { transactions } = useContext(GlobalContext); 
+        return (
+          <>
+            <h3>History</h3>
+            <ul className="list">
+              {transactions.map(transaction => (
+                <li className="minus">
+                  {transaction.text} <span>-$400</span><button className="delete-button">x</button>
+                </li>
+              ))}
+            </ul>
+          </>
+        )
+  
+8. Create a seperate component for each Transaction
