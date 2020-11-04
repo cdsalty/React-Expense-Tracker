@@ -10,8 +10,8 @@ const initialState = {
   ]
 }
 
-// Create context (will pass it through useContext)
-export const GlobalContext = createContext(initialState);
+// Create context             
+export const GlobalContext = createContext(initialState);   // (will pass it to useContext)
 
 
 // Create PROVIDER (since it will wrap other components, they will be considered 'children')
