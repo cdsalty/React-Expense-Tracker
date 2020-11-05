@@ -131,6 +131,7 @@ input[type='number'] {
   margin: 10px 0;
 }
 
+
 .list li.plus {
   border-right: 5px solid #2ecc71;
 }
@@ -139,7 +140,7 @@ input[type='number'] {
   border-right: 5px solid #c0392b;
 }
 
-.delete-btn {
+.delete-button {
   cursor: pointer;
   background-color: #e74c3c;
   border: 0;
@@ -155,7 +156,7 @@ input[type='number'] {
   transition: opacity 0.3s ease;
 }
 
-.list li:hover .delete-btn {
+.list li:hover .delete-button {
   opacity: 1;
 }
 

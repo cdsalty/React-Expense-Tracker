@@ -3,10 +3,10 @@ import AppReducer from './AppReducer';
 
 const initialState = {
   transactions: [
-    { id: 1, text: 'Flower', amount: -20 },
-    { id: 2, text: 'Salary', amount: 300 },
-    { id: 3, text: 'Book', amount: -10 },
-    { id: 4, text: 'Camera', amount: 150 }
+    { id: 1, text: 'Lotto', amount: 5000 },
+    { id: 2, text: 'horse food', amount: -225 },
+    { id: 3, text: 'barn light', amount: -225 },
+    { id: 4, text: 'pasture rental', amount: -1200 }
   ]
 }
 
@@ -50,13 +50,13 @@ export const GlobalProivder = ({ children }) => {
 /*
 For Adding Transaction:
 1. Create/Add function that will serve as the action
-  -> function addTransaction(transaction) {
+  * function addTransaction(transaction) {
       dispatch({
         type: "ADD_TRANSACTION",
-        payload: transaction
+        payload: transaction (When adding, we need the entire object)
       });
     }
-2. Pass it to the provider to use it
+2. Pass it to the provider to access it inside other components
     <GlobalContext.Provider value={{
       transactions: state.transactions,
       deleteTransaction,
@@ -66,6 +66,10 @@ For Adding Transaction:
     </GlobalContext.Provider>
   );
 3. Inside AppReducer, add a new case: "ADD_TRANSACTION"
-
-
+    case "ADD_TRANSACTION":
+      return {
+        ...state,
+        transactions: [action.payload, ...state.transactions]
+      }
+**ONCE COMPLETE, MOVE TO ADDTRANSACTION COMPONENT... ***
 */
