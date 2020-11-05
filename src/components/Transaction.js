@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Transaction = ({ transaction }) => {
-  const sign = transaction.amount < 0 ? '-' : '+';
+  // const sign = transaction.amount < 0 ? '-' : '+';
+  const sign = transaction.amount < 0 ? '-' : ''; // no reason for + when it's a positive number
 
   return (
     <li className={transaction.amount < 0 ? 'minus' : 'plus'}>

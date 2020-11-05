@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Header = () => {
   return (
-    <h2>Expense Tracker</h2>
+    // temp shared the balance component to center
+    <h2 className="align-center">Expense Tracker</h2>
   )
 }
 
-// import as { Header } inside App
